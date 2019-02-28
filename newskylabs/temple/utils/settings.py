@@ -74,64 +74,6 @@ def merge_settings(defaults, overwrite):
 
     return merged
 
-###
-###        #
-###        #    # When the key is defined in both dictionaries
-###        #    # and in both of them the value is itself a dictionary
-###        #    # recursively overwrite the values
-###        #    if isinstance(value, dict) \
-###        #       and key in defaults \
-###        #       and isinstance(defaults[key], dict):
-###        #        defaults[key] = merge_settings(defaults[key], value)
-###        #
-###        #   else:
-###        #        # In all other cases the value should be as given in merge
-###        #        defaults[key] = value
-###
-###            ldefaults = len(defaults)
-###            lover = len(overwrite)
-###            l = min(ldefaults, lover)
-###            
-###            result = [i for i in range(l)]
-###
-###            
-###            #| ldefaults = min(len(defaults), len(overwrite))
-###            #| defaults = 'TODO' 
-###            #| 
-###            #| l = min
-###            #| # the first 
-###            #| defaults = overwrite
-###
-###        else:
-###        
-###            defaults = 'TODO' 
-###
-###    # When defaults is a dictionary...
-###    #elif isinstance(overwrite, dict):
-###        
-###        #defaults = 'TODO' 
-###
-###        #for key, value in overwrite.items():
-###        #
-###        #    # When the key is defined in both dictionaries
-###        #    # and in both of them the value is itself a dictionary
-###        #    # recursively overwrite the values
-###        #    if isinstance(value, dict) \
-###        #       and key in defaults \
-###        #       and isinstance(defaults[key], dict):
-###        #        defaults[key] = merge_settings(defaults[key], value)
-###        #
-###        #   else:
-###        #        # In all other cases the value should be as given in merge
-###        #        defaults[key] = value
-###
-###    # When 'overwrite' is neither a list nor a dictionary
-###    # its value always overwrites the value of 'defaults'
-###    else:  # not isinstance(overwrite, (list, dict))
-###        merged = overwrite
-###        
-###    return merged
-
 ## =========================================================
 ## =========================================================
 
