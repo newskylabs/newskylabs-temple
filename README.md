@@ -1,5 +1,5 @@
 
-# newskylabs-temple
+# newskylabs-temple - NEWSKYLABS TEMPLatE generator
 
-NewSkyLabs Python project template
+A tool to generate file trees from template file trees.
 
