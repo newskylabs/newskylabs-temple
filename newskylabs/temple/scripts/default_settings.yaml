@@ -1,0 +1,27 @@
+# -*- mode: yaml -*-
+## =========================================================
+##                    Dietrich Bollmann, Luebeck, 2019/03/03
+## 
+## temple's setting file
+## ---------------------------------------------------------
+
+author:
+  first-name: New
+  family-name: Sky
+  email: new.sky@newskylabs.net
+
+company: NewSkyLabs
+
+version: 0.0.1.dev1
+status:  Development
+license: Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
+
+python-project:
+  language: Python
+  template-dir: ~/newskylabs/temple/templates/python-project
+  project-dir: .
+
+## =========================================================
+## =========================================================
+
+# fin.
