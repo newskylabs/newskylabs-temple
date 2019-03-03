@@ -79,6 +79,11 @@ setuptools.setup(
     ],
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     packages=packages,
+    entry_points={
+        'console_scripts': [
+            'temple = newskylabs.temple.__main__:cli',
+        ]
+    },
     include_package_data=True,
 )
 
