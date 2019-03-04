@@ -84,6 +84,9 @@ setuptools.setup(
             'temple = newskylabs.temple.__main__:cli',
         ]
     },
+    package_data={
+        'settings': ['newskylabs/temple/scripts/default_settings.yaml'],
+    },
     include_package_data=True,
 )
 
