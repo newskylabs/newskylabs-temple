@@ -6,7 +6,7 @@ A tool to generate file trees from template file trees.
 
 ## Installation
 
-You can install *[temple]* with *pip* directly from its *[github repository](https://github.com/newskylabs/newskylabs-temple)*:
+You can install *temple* with *pip* directly from its *[github repository](https://github.com/newskylabs/newskylabs-temple)*:
 
 ```sh
 pip install git+https://github.com/newskylabs/newskylabs-temple
