@@ -38,7 +38,8 @@ def read_file(*parts):
 
 def find_packages(namespace):
     """
-    Return a list all Python packages directory 'where'
+    Return a list of all Python packages defined in the 'namespace'
+    directory
     """
     return [
         '{}.{}'.format(namespace, package) 
