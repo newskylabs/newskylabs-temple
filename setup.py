@@ -33,8 +33,8 @@ def read_file(*parts):
     Read a file and return its content
     """
     package_dir = os.path.abspath(os.path.dirname(__file__))
-    with codecs.open(os.path.join(package_dir, *parts), 'r') as fp:
-        return fp.read()
+    with codecs.open(os.path.join(package_dir, *parts), 'r') as fh:
+        return fh.read()
 
 def find_packages(namespace):
     """
