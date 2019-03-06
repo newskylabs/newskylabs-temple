@@ -24,7 +24,7 @@ import click
 
 from pathlib import Path
 
-from newskylabs.temple.utils.settings import Settings
+from newskylabs.utils.settings import Settings
 from newskylabs.temple.templates.engine \
     import TemplateEngine, UndefinedProjectTypeError
 

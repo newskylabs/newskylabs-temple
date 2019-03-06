@@ -27,7 +27,7 @@ from pathlib import Path
 from datetime import datetime
 
 from newskylabs.temple.templates.jinja import generate_file_from_template
-from newskylabs.temple.utils.generic import get_recursively
+from newskylabs.utils.generic import get_recursively
 from newskylabs.temple.utils.string_utilities import hyphen_to_underscore_in_keys, \
     hyphen_to_underscore
 
