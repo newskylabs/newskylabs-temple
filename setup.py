@@ -73,12 +73,6 @@ setuptools.setup(
     author_email=__email__,
     license=__license__,
     url=__url__,
-    classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: OS Independent',
-    ],
-    platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     packages=packages,
     entry_points={
         'console_scripts': [
@@ -89,6 +83,18 @@ setuptools.setup(
         'newskylabs.temple': ['scripts/default_settings.yaml'],
     },
     include_package_data=True,
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: Apache Software License',
+        'Operating System :: OS Independent',
+    ],
+    platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
+    install_requires=[
+        'newskylabs-utilities',
+    ],
+    dependency_links=[
+        'git+https://github.com/newskylabs/newskylabs-utilities',             
+    ]
 )
 
 ## =========================================================
