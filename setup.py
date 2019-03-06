@@ -93,7 +93,7 @@ setuptools.setup(
         'newskylabs-utilities>=0.0.1.dev1',
     ],
     dependency_links=[
-        'git+https://github.com/newskylabs/newskylabs-utilities',             
+        'git+https://github.com/newskylabs/newskylabs-utilities#egg=newskylabs-utilities-0.0.1.dev1',
     ]
 )
 
