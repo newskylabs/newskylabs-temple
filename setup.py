@@ -90,7 +90,7 @@ setuptools.setup(
     ],
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     install_requires=[
-        'newskylabs-utilities',
+        'newskylabs-utilities>=0.0.1.dev1',
     ],
     dependency_links=[
         'git+https://github.com/newskylabs/newskylabs-utilities',             
