@@ -29,7 +29,9 @@ cat > templates/project/about.md <<FIN
 
 * project name:  {{ project.name }}
 * author:        {{ author.name }}
+* homepage:      {{ author.homepage }}
 * email:         {{ author.email }}
+* contact:       {{ author.contact }}
 * company:       {{ company.name }}
 * date:          {{ date }}
 * copyright:     {{ copyright }}
@@ -95,7 +97,9 @@ $ cat my-project/my-project.git/project/about.md
 
 * project name:  my-project
 * author:        Your Name
+* homepage:      http://your.home.page/
 * email:         your@email.address
+* contact:       http://your.home.page/contact
 * company:       YourCompany
 * date:          2019/03/04
 * copyright:     Copyright 2019 Your Name
@@ -181,5 +185,5 @@ $ tail -10 my-project/my-project.git/README.md
 
 If you have any comments, [please drop me a message](http://dietrich.newskylabs.net/email)!
 
-*Copyright (c) 2015 [Dietrich Bollmann](http://dietrich.newskylabs.net)*
+*Copyright (c) 2019 [Dietrich Bollmann](http://dietrich.newskylabs.net)*
 
