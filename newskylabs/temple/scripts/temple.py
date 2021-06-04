@@ -20,6 +20,8 @@ Definition of the command line script `temple`.
 
 """
 
+import sys
+import os
 import click
 
 from pathlib import Path
@@ -49,10 +51,12 @@ def cli():
 ## ---------------------------------------------------------
 
 @cli.command(name="generate")
-@click.argument('project_type', type=str)
-@click.argument('project_name', type=str)
-def command_generate(project_type, project_name):
-    """Generate a python project with the given name.
+@click.argument('type', type=str)
+@click.argument('name', type=str, required=False)
+def command_generate(type, name):
+    """Generate a project of the given TYPE with the given name.
+    When TYPE is a yaml file, interpret it as project data file
+    and merge the data into the temple settings.
     """
 
     # Get the directory of this file 
@@ -69,9 +73,36 @@ def command_generate(project_type, project_name):
     # overwriting the default settings with and the user settings
     settings = Settings(default_settings_file, user_settings_file)
 
+    # when TYPE is a yaml file (has one of the extensions '.yaml' or '.yml'),
+    # interpret it as a project settings file
+    if type[-5:] == '.yaml' or \
+       type[-4:] == '.yml':
+
+        settings_file = type
+
+        # Ensure that the file exists
+        if not os.path.isfile(settings_file):
+            print('ERROR Project settings file not found: {}'.format(settings_file))
+            sys.exit(1)
+
+        # Merge in the given project settings
+        settings.merge_settings_file(settings_file)
+
+        # DEBUG
+        #| print('DEBUG Settings:', settings.get_settings())
+
+        # Ensure that the 'project' entry is defined in the settings
+        if 'project' in settings.get_settings():
+            type = 'project'
+            
+        else:
+            # No project type given
+            print("ERROR A 'project' entry has to be defined in the settings!")
+            sys.exit(1)
+
     # Instantiate the TemplateEngine
     try:
-        engine = TemplateEngine(project_type, project_name, settings)
+        engine = TemplateEngine(type, name, settings)
 
         # Generate the project
         engine.generate()

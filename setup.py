@@ -62,6 +62,9 @@ long_description = read_file('README.md')
 # Find the list of packages
 packages = find_packages(namespace)
 
+# DEBUG
+print('DEBUG packages:', packages)
+
 # Setup package
 setuptools.setup(
     name=__package_name__,

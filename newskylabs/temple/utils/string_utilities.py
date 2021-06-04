@@ -21,16 +21,37 @@ String utilities.
 """
 
 ## =========================================================
-## hyphen_to_underscore_in_keys()
+## hyphen_to_underscore_string()
 ## ---------------------------------------------------------
 
-def hyphen_to_underscore(string):
+def hyphen_to_underscore_string(string):
     """
     Convert hyphens to underscores in the given string
     """
     return string.replace('-', '_')
 
-def hyphen_to_underscore_in_keys(dictionary):
+## =========================================================
+## Utility functions
+## ---------------------------------------------------------
+
+def _hyphen_to_underscore(obj):
+    """
+    Convert hyphens to underscores in the keys of dictionaries.
+    """
+
+    if isinstance(obj, dict):
+        return _hyphen_to_underscore_dict(obj)
+
+    elif isinstance(obj, list):
+        return _hyphen_to_underscore_list(obj)
+
+    elif isinstance(obj, tuple):
+        return _hyphen_to_underscore_tuple(obj)
+
+    else:
+        return obj
+
+def _hyphen_to_underscore_dict(dictionary):
     """
     Convert hyphens to underscores in the keys of dictionaries.
     """
@@ -40,12 +61,31 @@ def hyphen_to_underscore_in_keys(dictionary):
 
         key = key.replace('-', '_')
 
-        if isinstance(value, dict):
-            value = hyphen_to_underscore_in_keys(value)
-
-        target[key] = value
+        target[key] = _hyphen_to_underscore(value)
 
     return target
+
+def _hyphen_to_underscore_list(l):
+    """
+    Convert hyphens to underscores in the keys of dictionaries.
+    """
+    return [_hyphen_to_underscore(item) for item in l]
+
+def _hyphen_to_underscore_tuple(t):
+    """
+    Convert hyphens to underscores in the keys of dictionaries.
+    """
+    return tuple(_hyphen_to_underscore_list(t))
+
+## =========================================================
+## hyphen_to_underscore_in_keys()
+## ---------------------------------------------------------
+
+def hyphen_to_underscore_in_keys(dictionary):
+    """
+    Convert hyphens to underscores in the keys of dictionaries.
+    """
+    return _hyphen_to_underscore_dict(dictionary)
 
 ## =========================================================
 ## =========================================================
