@@ -93,6 +93,9 @@ setuptools.setup(
     ],
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     install_requires=[
+        'click',
+        'pyyaml',
+        'jinja2',
         'newskylabs-utilities @ git+https://github.com/newskylabs/newskylabs-utilities#egg=newskylabs-utilities-0.0.1.dev1',
     ],
 )
